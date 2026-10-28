@@ -1,0 +1,18 @@
+V89 - INSTALACION Y USO
+
+1. Extrae la carpeta ComfyUI_RefModCachePersistente del ZIP dentro de ComfyUI/custom_nodes/.
+2. Reinicia por completo el servidor ComfyUI (no basta con actualizar el navegador).
+3. Importa H3_SWAP_V89_CACHE_REAL_REFMOD.json.
+4. En la seccion 12, pon FALSE la PRIMERA VEZ, genera rostro/cuerpo. Se guardan automaticamente:
+     ComfyUI/output/refmod_cache_persistente/ultimo_rostro.png
+     ComfyUI/output/refmod_cache_persistente/ultimo_cuerpo.png
+5. Al terminar, cambia a TRUE. Las siguientes ejecuciones usan esas fotos sin recalcular sus ramas.
+6. Cuando cambies personaje: FALSE -> generar nuevas fotos -> TRUE.
+
+Esto NO agrega otro generador; usa las salidas que ya genera tu RefMod.
+Las vistas de auditoria muestran la imagen que recibe el resto del workflow.
+No necesita example.png ni LoadImage manual.
+
+ATENCION: En instancias cloud efimeras, la carpeta output puede perderse si se recrea la instancia.
+El nodo personalizado es obligatorio: si ComfyUI lo marca faltante, revisa carpeta y reinicio.
+Este sistema usa inputs lazy de ComfyUI. La estructura fue verificada, pero no se ha probado en la GPU del usuario.
